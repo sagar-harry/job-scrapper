@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block head %} 
+<title>Data Science</title>
+{% endblock %}
+
+{% block body %}
+<h1>Job roles on Times Jobs Website</h1>
+<div content="Jobs">
+    <table>
+        <tr>
+            <th>Company Name</th>
+            <th>Skills Required</th>
+            <th>Location</th>
+            <th>Experience</th>
+            <th>Uploaded on</th>
+            <th>Link</th>
+        </tr>
+        {% for job in jobs %}
+        <tr>
+            <td>{{job["company"]}}</td>
+            <td>{{job["skills"]}}</td>
+            <td>{{job["location"] }}</td>
+            <td>{{job["experience"]}}</td>
+            <td>{{job["date of upload"]}}</td>
+            <td><a href="{{job['href']}}">Click here to know more</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}
